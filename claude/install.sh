@@ -58,13 +58,6 @@ if [ -f "$REPO_DIR/ghostty-focus.sh" ]; then
     create_symlink "$REPO_DIR/ghostty-focus.sh" "$CLAUDE_DIR/ghostty-focus.sh" "ghostty-focus.sh"
 fi
 
-# Symlink iterm-focus.sh
-if [ -f "$REPO_DIR/iterm-focus.sh" ]; then
-    echo "🔗 Linking iterm-focus.sh..."
-    chmod +x "$REPO_DIR/iterm-focus.sh"
-    create_symlink "$REPO_DIR/iterm-focus.sh" "$CLAUDE_DIR/iterm-focus.sh" "iterm-focus.sh"
-fi
-
 # Symlink statusline.py
 if [ -f "$REPO_DIR/statusline.py" ]; then
     echo "🔗 Linking statusline.py..."
