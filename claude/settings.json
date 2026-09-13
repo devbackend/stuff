@@ -1,7 +1,8 @@
 {
   "statusLine": {
     "type": "command",
-    "command": "$HOME/.claude/statusline.py"
+    "command": "$HOME/.claude/statusline.py",
+    "padding": 0
   },
   "hooks": {
     "Stop": [
