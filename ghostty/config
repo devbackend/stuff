@@ -1,0 +1,57 @@
+# Appearance
+# Colors mirror Neovim's onedark.nvim with style = "cool"
+# (~/.local/share/nvim/lazy/onedark.nvim/lua/onedark/palette.lua).
+# Bright colors 9-14 are derived, not copied: the plugin maps them to the same
+# values as 1-6, which is fine for nvim's :terminal but flattens ls/git/tmux here.
+# The step is onedark's own grey -> light_grey delta (~+40 per channel).
+background = #242b38
+foreground = #a5b0c5
+selection-background = #363c51
+selection-foreground = #a5b0c5
+cursor-color = cell-foreground
+cursor-text = cell-background
+palette = 0=#151820
+palette = 1=#ef5f6b
+palette = 2=#97ca72
+palette = 3=#ebc275
+palette = 4=#5ab0f6
+palette = 5=#ca72e4
+palette = 6=#4dbdcb
+palette = 7=#a5b0c5
+palette = 8=#546178
+palette = 9=#ff8793
+palette = 10=#bff29a
+palette = 11=#ffea9d
+palette = 12=#82d8ff
+palette = 13=#f29aff
+palette = 14=#75e5f3
+palette = 15=#cdd8ed
+window-padding-x = 10
+window-padding-y = 8
+window-padding-balance = true
+macos-titlebar-style = transparent
+
+# Font
+# Family name comes from `ghostty +list-fonts`, it differs from the .ttf filename.
+font-family = "IosevkaTerm Nerd Font Mono"
+font-size = 15
+font-thicken = true
+font-thicken-strength = 128
+
+# Behavior
+cursor-style-blink = false
+mouse-hide-while-typing = true
+window-save-state = always
+confirm-close-surface = false
+macos-option-as-alt = true
+
+# Remote hosts have no xterm-ghostty terminfo, which breaks colors and tmux over ssh.
+# Alternative: drop this line and add ssh-terminfo below, then Ghostty installs
+# the terminfo on remotes itself and local undercurl keeps working.
+term = xterm-256color
+shell-integration = zsh
+shell-integration-features = cursor,title,no-sudo
+
+# Backtick sits on a keyboard layer here, so the hotkey uses base-layer keys only.
+quick-terminal-position = top
+keybind = global:ctrl+alt+t=toggle_quick_terminal

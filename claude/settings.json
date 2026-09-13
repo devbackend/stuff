@@ -1,0 +1,30 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "$HOME/.claude/statusline.py"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "PANE=\"$TMUX_PANE\"; SOCK=$(echo \"$TMUX\" | cut -d, -f1); terminal-notifier -message 'Work complete — check the terminal' -title 'Claude Code' -sound Glass -execute \"$HOME/.claude/ghostty-focus.sh '$PANE' '$SOCK'\"",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "PANE=\"$TMUX_PANE\"; SOCK=$(echo \"$TMUX\" | cut -d, -f1); terminal-notifier -message 'Claude needs your attention' -title 'Claude Code' -sound Ping -execute \"$HOME/.claude/ghostty-focus.sh '$PANE' '$SOCK'\"",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
