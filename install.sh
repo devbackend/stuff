@@ -141,4 +141,8 @@ install_muxbar() {
 install_muxbar
 
 echo ""
+echo "📊 Installing plannotator..."
+curl -fsSL https://plannotator.ai/install.sh | bash
+
+echo ""
 echo "✨ Done."
