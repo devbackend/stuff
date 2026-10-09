@@ -62,18 +62,20 @@ Only proceed to Step 3 once all open questions are resolved.
 
 ---
 
-## Step 3 — Plan mode or implement directly?
+## Step 3 — Ready to implement
 
-Ask the user (plain text):
+Questions are done — say so in one line, then ask via `AskUserQuestion` (single question,
+header `Next step`) with exactly these options, in this order:
 
-> Based on [one-line assessment of complexity/scope], I'd suggest [plan mode / implementing
-> directly]. Should I enter plan mode and write a structured implementation plan, or start
-> implementing directly?
+1. **Implement (Recommended)** — start coding now based on everything gathered above.
+2. **Plan mode** — write a structured implementation plan first.
 
-Wait for the answer.
+Implement is always the first option, regardless of task size: the user confirms it with a
+plain Enter in almost every run, so never reorder or re-label it based on your own complexity
+assessment.
 
-- If **plan mode**: continue to Step 4.
-- If **implement directly**: start coding immediately based on all context gathered above.
+- If **Implement**: start coding immediately.
+- If **Plan mode**: continue to Step 4.
 
 ---
 
