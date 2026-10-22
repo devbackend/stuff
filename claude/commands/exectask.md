@@ -58,7 +58,25 @@ Probe in particular:
 
 If a question can be answered by exploring the codebase, do that instead of asking.
 
-Only proceed to Step 3 once all open questions are resolved.
+### Controversial answers
+
+After every answer, check it against the brief. If the answer contradicts what the brief
+states — a different approach, scope, behavior, or acceptance criterion — never silently
+accept either side. Flag it explicitly before moving on:
+
+> **Controversial:** the brief says `<quote or paraphrase from the brief>`, but your answer
+> says `<the user's answer>`.
+
+Then ask via `AskUserQuestion` (single question, header `Conflict`) with these options:
+
+1. **Go with my answer** — the brief is overridden on this point.
+2. **Go with the brief** — discard the answer, follow the brief as written.
+
+Do not continue to the next question until the conflict is resolved. Keep a running list of
+every point where the brief was overridden — it is carried into the plan or the
+implementation.
+
+Only proceed to Step 3 once all open questions and conflicts are resolved.
 
 ---
 
@@ -99,6 +117,9 @@ Based on the brief and the answers from Step 2, produce a structured plan:
 ### Context
 [What problem this solves. Where it fits in the product. Relevant background from the brief.]
 
+### Deviations from the brief
+- [Point where the brief was overridden in Step 2: what the brief said → what we do instead]
+
 ### Scope
 **In scope:**
 - ...
@@ -117,5 +138,6 @@ Based on the brief and the answers from Step 2, produce a structured plan:
 - [ ] Manual verification steps: ...
 ```
 
-No "Open Questions" section — all questions were resolved in Step 2. If the codebase is
+No "Open Questions" section — all questions were resolved in Step 2. Omit "Deviations from
+the brief" if nothing was overridden. If the codebase is
 accessible, explore relevant files to make file paths and module names concrete.
